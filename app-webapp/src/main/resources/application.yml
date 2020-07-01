@@ -1,0 +1,20 @@
+server:
+  port: 8801
+  servlet:
+    context-path: /api
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  jackson:
+    time-zone: GMT+8
+  application:
+    name: app-webapp
+  aop:
+    proxyTargetClass: true
+    auto: true
+  jmx:
+    enabled: true
+  profiles:
+    active: dev
+

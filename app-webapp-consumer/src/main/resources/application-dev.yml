@@ -1,0 +1,7 @@
+server:
+  port: 8882
+spring:
+  emq:
+    #MQTT-连接服务器默认客户端ID
+    clientid: cddc
+    topic: wwc

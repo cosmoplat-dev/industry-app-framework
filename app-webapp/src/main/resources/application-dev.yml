@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username:
+    password:
+    url:jdbc:mysql://localhost:8888/industry_app_framework?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  emq:
+    #MQTT-连接服务器默认客户端ID
+    clientid:
+    topic:

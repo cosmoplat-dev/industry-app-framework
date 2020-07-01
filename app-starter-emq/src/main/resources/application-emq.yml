@@ -1,0 +1,22 @@
+spring:
+  emq:
+    #MQTT配置信息
+    #MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613，tcp://192.168.2.133:61613
+    host: ws://localhost:8888
+    #MQTT-连接服务器默认客户端ID
+    clientid:
+    #MQTT-默认的消息推送主题，实际可在调用接口时指定
+    topic: ww
+    #MQTT-用户名
+    username:
+    #MQTT-密码
+    password:
+    #连接超时
+    timeout: 10
+    #心跳检测
+    keepalive: 20
+    #可靠度:
+    #最多一次 (QoS:0)
+    #至少一次 (QoS:1)
+    #有且仅有一次 (QoS:2)
+    qos: 1

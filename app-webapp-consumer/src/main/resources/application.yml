@@ -1,0 +1,18 @@
+server:
+  port: 8801
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  jackson:
+    time-zone: GMT+8
+  application:
+    name: framework
+  aop:
+    proxyTargetClass: true
+    auto: true
+  jmx:
+    enabled: true
+  profiles:
+    active: dev
+

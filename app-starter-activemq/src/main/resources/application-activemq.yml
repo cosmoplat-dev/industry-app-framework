@@ -1,0 +1,18 @@
+spring:
+  activemq:
+    # mq地址
+    broker-url:tcp://localhost:8888
+    #true 表示使用内置的MQ，false则连接服务器
+    in-memory: false
+    pool:
+      #true表示使用连接池；false时，每发送一条数据创建一个连接
+      enabled: true
+      #连接池最大连接数
+      max-connections: 10
+      #空闲的连接过期时间，默认为30秒
+      idle-timeout: 30000
+    user:
+    password:
+  jms:
+    #默认情况下activemq提供的是queue模式，若要使用topic模式需要配置下面配置为true
+    pub-sub-domain: true

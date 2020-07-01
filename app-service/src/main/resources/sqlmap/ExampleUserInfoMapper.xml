@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cosmoplat.example.mapper.ExampleUserInfoMapper">
+	<resultMap id="userInfoMap" type="com.cosmoplat.example.domain.UserInfo">
+		<result property="createTime" column="create_time" /><!-- 创建时间 -->
+		<result property="id" column="id" /><!--  -->
+		<result property="isDel" column="is_del" /><!-- 是否删除 -->
+		<result property="status" column="status" /><!-- 用户状态 -->
+		<result property="updateTime" column="update_time" /><!-- 修改时间 -->
+		<result property="userEmail" column="user_email" /><!-- 用户邮箱 -->
+		<result property="userId" column="user_id" /><!-- 用户id -->
+		<result property="userName" column="user_name" /><!-- 用户名 -->
+		<result property="userPass" column="user_pass" /><!-- 密码 -->
+		<result property="userPhone" column="user_phone" /><!-- 用户手机号 -->
+	</resultMap>
+	<!-- 基本引用sql -->
+	<sql id="sql_all_cls">
+		select create_time,id,is_del,status,update_time,user_email,user_id,user_name,user_pass,user_phone
+	      from user_info t
+	</sql>
+	<sql id="sql_where_cls">
+		<if test="model.createTime!=null ">and t.create_time = #{model.createTime}</if>
+		<if test="model.id!=null ">and t.id = #{model.id}</if>
+		<if test="model.isDel!=null   and model.isDel != '' ">and t.is_del = #{model.isDel}</if>
+		<if test="model.status!=null   and model.status != '' ">and t.status = #{model.status}</if>
+		<if test="model.updateTime!=null ">and t.update_time = #{model.updateTime}</if>
+		<if test="model.userEmail!=null   and model.userEmail != '' ">and t.user_email = #{model.userEmail}</if>
+		<if test="model.userId!=null   and model.userId != '' ">and t.user_id = #{model.userId}</if>
+		<if test="model.userName!=null   and model.userName != '' ">and t.user_name = #{model.userName}</if>
+		<if test="model.userPass!=null   and model.userPass != '' ">and t.user_pass = #{model.userPass}</if>
+		<if test="model.userPhone!=null   and model.userPhone != '' ">and t.user_phone = #{model.userPhone}</if>
+	</sql>
+	<sql id="sql_like_cls">
+	</sql>
+	<!-- 保存信息 -->
+	<insert id="save" useGeneratedKeys="true" keyProperty="model.id">
+		<![CDATA[
+		insert into user_info(
+			 create_time, id, is_del, status, update_time, user_email, user_id, user_name, user_pass, user_phone)
+		values (
+			#{model.createTime},#{model.id},#{model.isDel},#{model.status},#{model.updateTime},#{model.userEmail},#{model.userId},#{model.userName},#{model.userPass},#{model.userPhone}		
+		   )
+		]]>
+	</insert>
+	<!-- 根据主键删除 -->
+	<delete id="deleteById">
+		<![CDATA[
+		delete from user_info where id = #{id}
+		]]>
+	</delete>
+	<!-- 更新信息 -->
+	<update id="update" >
+		update user_info t
+		<set>
+			<if test="model.createTime!=null ">t.create_time = #{model.createTime},</if>
+			<if test="model.id!=null ">t.id = #{model.id},</if>
+			<if test="model.isDel!=null ">t.is_del = #{model.isDel},</if>
+			<if test="model.status!=null ">t.status = #{model.status},</if>
+			<if test="model.updateTime!=null ">t.update_time = #{model.updateTime},</if>
+			<if test="model.userEmail!=null ">t.user_email = #{model.userEmail},</if>
+			<if test="model.userId!=null ">t.user_id = #{model.userId},</if>
+			<if test="model.userName!=null ">t.user_name = #{model.userName},</if>
+			<if test="model.userPass!=null ">t.user_pass = #{model.userPass},</if>
+			<if test="model.userPhone!=null ">t.user_phone = #{model.userPhone},</if>
+		</set>
+		where id = #{model.id}
+	</update>
+	<!-- 根据ID查询-->
+	<select id="getById" resultMap="userInfoMap">
+		<include refid="sql_all_cls" />
+		<![CDATA[
+		where t.id = #{id}
+		]]>
+	</select>
+	<!-- 带条件的查询 -->
+	<select id="getByModel" resultMap="userInfoMap">
+		<include refid="sql_all_cls" />
+		where 1=1 
+		<include refid="sql_where_cls" />
+	</select>
+	<!-- 带条件的查询 -->
+	<select id="searchList" resultMap="userInfoMap">
+		<include refid="sql_all_cls" />
+		where 1=1 
+		<include refid="sql_where_cls" />
+	<!-- 模糊查询 -->
+		<include refid="sql_like_cls" />
+		order by t.id
+	</select>
+</mapper>

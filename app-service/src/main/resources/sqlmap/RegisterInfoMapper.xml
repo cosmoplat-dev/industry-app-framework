@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cosmoplat.example.mapper.IRegisterInfoMapper">
+	<resultMap id="registerInfoMap" type="com.cosmoplat.example.domain.RegisterInfo">
+		<result property="author" column="author" /><!-- 操作者 -->
+		<result property="id" column="id" /><!-- 主键 -->
+		<result property="machineIp" column="machine_ip" /><!-- 设备ip -->
+		<result property="machineMark" column="machine_mark" /><!-- 设备标记 -->
+		<result property="machineNumber" column="machine_number" /><!-- 设备号 -->
+		<result property="regTime" column="reg_time" /><!-- 注册时间 -->
+	</resultMap>
+	<!-- 基本引用sql -->
+	<sql id="sql_all_cls">
+		select author,id,machine_ip,machine_mark,machine_number,reg_time
+	      from register_info t
+	</sql>
+	<sql id="sql_where_cls">
+		<if test="model.author!=null   and model.author != '' ">and t.author = #{model.author}</if>
+		<if test="model.id!=null ">and t.id = #{model.id}</if>
+		<if test="model.machineIp!=null   and model.machineIp != '' ">and t.machine_ip = #{model.machineIp}</if>
+		<if test="model.machineMark!=null   and model.machineMark != '' ">and t.machine_mark = #{model.machineMark}</if>
+		<if test="model.machineNumber!=null   and model.machineNumber != '' ">and t.machine_number = #{model.machineNumber}</if>
+		<if test="model.regTime!=null ">and t.reg_time = #{model.regTime}</if>
+	</sql>
+	<sql id="sql_like_cls">
+	</sql>
+	<!-- 保存信息 -->
+	<insert id="save" useGeneratedKeys="true" keyProperty="model.id">
+		<![CDATA[
+		insert into register_info(
+			 author, id, machine_ip, machine_mark, machine_number, reg_time)
+		values (
+			#{model.author},#{model.id},#{model.machineIp},#{model.machineMark},#{model.machineNumber},#{model.regTime}		
+		   )
+		]]>
+	</insert>
+	<!-- 根据主键删除 -->
+	<delete id="deleteById">
+		<![CDATA[
+		delete from register_info where id = #{id}
+		]]>
+	</delete>
+	<!-- 更新信息 -->
+	<update id="update" >
+		update register_info t
+		<set>
+			<if test="model.author!=null ">t.author = #{model.author},</if>
+			<if test="model.id!=null ">t.id = #{model.id},</if>
+			<if test="model.machineIp!=null ">t.machine_ip = #{model.machineIp},</if>
+			<if test="model.machineMark!=null ">t.machine_mark = #{model.machineMark},</if>
+			<if test="model.machineNumber!=null ">t.machine_number = #{model.machineNumber},</if>
+			<if test="model.regTime!=null ">t.reg_time = #{model.regTime},</if>
+		</set>
+		where id = #{model.id}
+	</update>
+	<!-- 根据ID查询-->
+	<select id="getById" resultMap="registerInfoMap">
+		<include refid="sql_all_cls" />
+		<![CDATA[
+		where t.id = #{id}
+		]]>
+	</select>
+	<!-- 带条件的查询 -->
+	<select id="getByModel" resultMap="registerInfoMap">
+		<include refid="sql_all_cls" />
+		where 1=1 
+		<include refid="sql_where_cls" />
+	</select>
+	<!-- 带条件的查询 -->
+	<select id="searchList" resultMap="registerInfoMap">
+		<include refid="sql_all_cls" />
+		where 1=1 
+		<include refid="sql_where_cls" />
+	<!-- 模糊查询 -->
+		<include refid="sql_like_cls" />
+		order by t.id
+	</select>
+</mapper>

@@ -1,0 +1,10 @@
+swagger:
+  title: swagger
+  version: 1.0-SNAPSHOT
+  contact:
+    name:
+    email:
+  base-package: com.cosmoplat.examplecontroller
+  base-path: /swagger/**,/activemq/**,/index/**,/redis/**
+  exclude-path: /error, /ops/**
+#  访问路径:http://localhost:8888/swagger-ui.html

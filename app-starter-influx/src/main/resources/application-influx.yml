@@ -1,0 +1,6 @@
+spring:
+  influx:
+    url: http://localhost:8888
+    database:
+    user:
+    password:
