@@ -1,7 +1,7 @@
 spring:
   emq:
     #MQTT配置信息
-    #MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613，tcp://192.168.2.133:61613
+    #MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://localhost:8888，tcp://localhost:8889
     host: ws://localhost:8888
     #MQTT-连接服务器默认客户端ID
     clientid:
