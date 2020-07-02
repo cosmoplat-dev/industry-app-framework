@@ -19,27 +19,28 @@ public class ExampleServiceImpl implements ExampleService {
 
     @Override
     public void save(RegisterInfo registerInfo) {
-
+        exampleIRegisterInfoMapper.save(registerInfo);
     }
 
     @Override
     public void deleteById(Integer id) {
+        exampleIRegisterInfoMapper.deleteById(id);
 
     }
 
     @Override
     public void update(RegisterInfo registerInfo) {
-
+        exampleIRegisterInfoMapper.update(registerInfo);
     }
 
     @Override
     public RegisterInfo getById(Integer id) {
-        return null;
+        return exampleIRegisterInfoMapper.getById(id);
     }
 
     @Override
     public RegisterInfo getByModel(RegisterInfo registerInfo) {
-        return null;
+        return exampleIRegisterInfoMapper.getByModel(registerInfo);
     }
 
     @Override
