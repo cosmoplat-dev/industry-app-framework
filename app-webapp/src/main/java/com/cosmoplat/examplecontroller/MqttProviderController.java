@@ -24,7 +24,6 @@ public class MqttProviderController {
 
     @PostMapping("/sendMqtt")
     public String sendHello(String pushMessage){
-//        mqttPushClient.subscribe(kdTopic);
         mqttPushClient.publish(0, false, kdTopic, pushMessage);
         log.info("Mqtt消息已发送, topic:{},Message:{}",kdTopic,pushMessage);
         return  pushMessage;
