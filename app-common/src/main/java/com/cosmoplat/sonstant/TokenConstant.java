@@ -16,13 +16,13 @@ public final class TokenConstant {
     public static final Integer DEL_FLAG_FALSE = 0;
 
     /**
-     * redis存储token设置的过期时间
+     * redis存储token设置的过期时间:2h
      */
-    public static  Integer TOKEN_EXPIRE_TIME = 60 * 60 * 2;
+    public static  Integer TOKEN_EXPIRE_TIME = 1000 * 60 * 60 * 2;
 
     /**
      * 设置可以重置token过期时间的时间界限:1000s
      */
-    public static final Integer TOKEN_RESET_TIME = 1000 * 100;
+    public static final Integer TOKEN_RESET_TIME = 1000 * 1000;
 
 }
