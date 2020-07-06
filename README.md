@@ -14,3 +14,10 @@ subsequent developers as their own responsibility***
 * 7：Access WebSocket communication protocol;
 * 8：Visualizing the RESTful interface with Swagger Framework;
 
+## Introduction to use:
+***This system is built in the way of multi-module, and all dependent components are an independent module.
+   When you need to create a Web service, just introduce the module you depend on in the POM file,
+   And modify the relevant address and account in the corresponding module into the correct address and account.
+   You can use the corresponding component directly by calling the API interface encapsulated in the module.***
+   
+## System architecture diagram
