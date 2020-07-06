@@ -19,7 +19,6 @@ public class ExampleServiceImpl implements ExampleService {
 
     @Override
     public void save(RegisterInfo registerInfo) {
-
         exampleIRegisterInfoMapper.save(registerInfo);
     }
 

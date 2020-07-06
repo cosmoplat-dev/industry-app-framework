@@ -29,7 +29,6 @@ public class InfluxDBConfig {
 
     @Bean
     public InfluxDBUtils influxDbUtils() {
-        System.out.println("--------userName-------"+userName+"--password---"+password);
         return new InfluxDBUtils(userName, password, influxDBUrl, database, "autogen");
     }
 

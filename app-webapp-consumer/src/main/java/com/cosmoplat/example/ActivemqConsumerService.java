@@ -34,6 +34,9 @@ public class ActivemqConsumerService {
 //        return "成功接受msg" + msg;
 //    }
 
+
+
+
     // 使用JmsListener配置消费者监听的队列
     @JmsListener(destination = "myActiveMQTopic")
     public void handleMessage1(String msg) {
