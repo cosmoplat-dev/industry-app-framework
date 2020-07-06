@@ -21,3 +21,4 @@ subsequent developers as their own responsibility***
    You can use the corresponding component directly by calling the API interface encapsulated in the module.***
    
 ## System architecture diagram
+<img src="http://app-framework-images.qingdao.cosmoplat.com/images1.jpg"/>
