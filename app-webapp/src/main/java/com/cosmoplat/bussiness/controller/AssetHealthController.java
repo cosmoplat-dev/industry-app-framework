@@ -47,7 +47,8 @@ public class AssetHealthController {
 
     @PostMapping("/state/{sid}")
     public ModelAndView getStateEcharts(@PathVariable String sid,@RequestParam String machineNumber){
-        this.machineNumber=machineNumber;
+        //通过类直接访问静态成员
+        AssetHealthController.machineNumber =machineNumber;
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("forward:/websocket/"+sid);
         return modelAndView;
