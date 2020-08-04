@@ -45,7 +45,7 @@ public class MqttPushClient {
                 e.printStackTrace();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("connect error ", e);
         }
     }
 
@@ -81,7 +81,7 @@ public class MqttPushClient {
         } catch (MqttPersistenceException e) {
             e.printStackTrace();
         } catch (MqttException e) {
-            e.printStackTrace();
+            log.error("publish error ", e);
         }
     }
 
@@ -102,7 +102,7 @@ public class MqttPushClient {
         try {
             MqttPushClient.getClient().subscribe(topic, qos);
         } catch (MqttException e) {
-            e.printStackTrace();
+            log.error("subscribe error ", e);
         }
     }
 }

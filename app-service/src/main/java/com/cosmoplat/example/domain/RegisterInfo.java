@@ -39,5 +39,5 @@ public class RegisterInfo implements Serializable {
 	 * 设备状态（1正常，0已注销，2禁用）
 	 */
 	private Integer Status;
-	
+
 }
