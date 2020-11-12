@@ -34,7 +34,8 @@ public class AssetHealthDao {
     public List<MessageEntity> getState(String machineNumber) {
 
         StringBuffer sql = new StringBuffer();
-        sql.append("SELECT * FROM machine_info WHERE (time > now() - ").append(SysConstants.ASSET_HEALTH_TIME).append("m)  and machineNumber ='")
+        sql.append("SELECT * FROM machine_info WHERE (time > now() - ")
+                .append(SysConstants.ASSET_HEALTH_TIME).append("m)  and machineNumber ='")
                 .append(machineNumber).append("'");
         QueryResult results = influxDBUtils.query(sql.toString());
         List<List<Object>> valueList = QueryResultConvertUtil.getValueList(results);

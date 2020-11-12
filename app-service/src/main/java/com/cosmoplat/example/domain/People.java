@@ -3,6 +3,7 @@ package com.cosmoplat.example.domain;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
 * 实体类：UserInfo
@@ -12,7 +13,7 @@ import java.io.Serializable;
 @Data
 public class People implements Serializable {
   	//创建时间
-	private java.util.Date createTime;
+	private Date createTime;
   	//主键
 	private Integer id;
 	//用户id
