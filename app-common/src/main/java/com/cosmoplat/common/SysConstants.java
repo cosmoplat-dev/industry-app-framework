@@ -8,7 +8,7 @@ import java.util.Map;
  * @author 27279
  */
 public class SysConstants {
-    public static final Map<String, Map<String, String>> allConstAlias = new LinkedHashMap<>();
+    public static final Map<String, Map<String, String>> ALLCONSTALIAS = new LinkedHashMap<>();
     /**
      * dic字典表中子系统的编码
      */
@@ -33,7 +33,7 @@ public class SysConstants {
                         constMap.put(fd.get(cls).toString(), fd.getName());
                     }
                 }
-                allConstAlias.put(cls.getSimpleName(), constMap);
+                ALLCONSTALIAS.put(cls.getSimpleName(), constMap);
             }
 
         } catch (Exception e) {

@@ -8,6 +8,8 @@ public class ResponseVo<T> implements Serializable {
 
     private final static String NO_LOGIN_MSG = "登录已失效，请重新登录！";
 
+    private final static String CODE_SUCCESS = "200";
+
     private T data;
 
     private String code;
@@ -19,7 +21,7 @@ public class ResponseVo<T> implements Serializable {
     private String imgHost;
 
     public ResponseVo() {
-        this.code = "200";
+        this.code = CODE_SUCCESS;
         this.msg = "请求成功";
         this.setIsSuccess(true);
     }
@@ -75,7 +77,7 @@ public class ResponseVo<T> implements Serializable {
 
     public static <T> ResponseVo<T> ok() {
         ResponseVo resp = new ResponseVo();
-        resp.setCode("200");
+        resp.setCode(CODE_SUCCESS);
         resp.setData(null);
         resp.setIsSuccess(true);
         return resp;
@@ -83,7 +85,7 @@ public class ResponseVo<T> implements Serializable {
 
     public static <T> ResponseVo<T> ok(T data) {
         ResponseVo resp = new ResponseVo();
-        resp.setCode("200");
+        resp.setCode(CODE_SUCCESS);
         resp.setData(data);
         resp.setIsSuccess(true);
         return resp;
