@@ -29,7 +29,7 @@ public interface ExampleUserInfoMapper{
      */
     void update(@Param("model") UserInfo userInfo);
     /**
-     * @param
+     * @param id
      * @return 查找
      */
     UserInfo getById(@Param("id") Integer id);

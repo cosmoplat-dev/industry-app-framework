@@ -28,17 +28,18 @@ public interface ExampleRegisterInfoMapper {
      */
     void update(@Param("model") RegisterInfo registerInfo);
     /**
-     * @param
+     * @param id
      * @return 查找
      */
     RegisterInfo getById(@Param("id") Integer id);
     /**
-     * @param
+     * @param registerInfo
      * @return 全部字段查找
      */
     RegisterInfo getByModel(@Param("model") RegisterInfo registerInfo);
     /**
-     * @param 查找list
+     * @param
+     * @return 查找list
      */
     List<RegisterInfo> searchList();
 
