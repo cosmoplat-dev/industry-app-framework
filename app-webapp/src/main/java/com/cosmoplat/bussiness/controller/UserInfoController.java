@@ -21,11 +21,11 @@ public class UserInfoController {
     RedisUtil redisUtil;
     @GetMapping("/getUser")
     public ResponseVo getUserInfoByToken(@RequestParam String token){
-        String userId= String.valueOf(redisUtil.get(token));
-        UserInfo userInfo=new UserInfo();
+        String userId = String.valueOf(redisUtil.get(token));
+        UserInfo userInfo = new UserInfo();
         userInfo.setUserId(userId);
         try{
-             userInfo=userInfoService.getUserInfo(userInfo);
+             userInfo = userInfoService.getUserInfo(userInfo);
         }catch (Exception e){
             log.error(e.getMessage());
             throw new RuntimeException("服务器错误："+e.getMessage());
