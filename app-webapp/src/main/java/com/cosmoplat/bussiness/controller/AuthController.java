@@ -25,8 +25,8 @@ public class AuthController {
         //重新赋值
         userInfo=userInfoService.getUserInfo(userInfo);
         //验证通过
-        if (null!=userInfo) {
-            String token= JwtUtil.sign(userInfo.getUserId());
+        if (null != userInfo) {
+            String token = JwtUtil.sign(userInfo.getUserId());
             userInfo.setToken(token);
             tokenManager.initToken(userInfo);
             return ResponseVo.ok(userInfo);
@@ -39,7 +39,7 @@ public class AuthController {
     @DisableToken
     public ResponseVo logoff(HttpServletRequest request){
         try{
-            String token=request.getHeader("bear_token");
+            String token = request.getHeader("bear_token");
             UserInfo userInfo=new UserInfo();
             userInfo.setToken(token);
             tokenManager.loginOff(userInfo);

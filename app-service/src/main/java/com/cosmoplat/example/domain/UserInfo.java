@@ -35,7 +35,7 @@ public class UserInfo implements Serializable {
 	/**
 	 * 修改时间
 	 */
-	private java.util.Date updateTime;
+	private Date updateTime;
 	/**
 	 * 用户邮箱
 	 */
