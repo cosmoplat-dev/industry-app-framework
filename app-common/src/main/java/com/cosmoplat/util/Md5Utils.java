@@ -9,7 +9,7 @@ import java.security.MessageDigest;
  * Md5加密方法
  */
 public class Md5Utils {
-    private static final Logger log = LoggerFactory.getLogger(Md5Utils.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Md5Utils.class);
 
     private static byte[] md5(String s) {
         MessageDigest algorithm;
@@ -20,7 +20,7 @@ public class Md5Utils {
             byte[] messageDigest = algorithm.digest();
             return messageDigest;
         } catch (Exception e) {
-            log.error("MD5 Error...", e);
+            LOG.error("MD5 Error...", e);
         }
         return null;
     }
@@ -45,7 +45,7 @@ public class Md5Utils {
         try {
             return new String(toHex(md5(s)).getBytes("UTF-8"), "UTF-8");
         } catch (Exception e) {
-            log.error("not supported charset...{}", e);
+            LOG.error("not supported charset...{}", e);
             return s;
         }
     }
