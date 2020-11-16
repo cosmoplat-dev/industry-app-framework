@@ -27,26 +27,28 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class PushCallback implements MqttCallback {
-    private final static Logger log = LoggerFactory.getLogger(PushCallback.class);
+
+    private final static Logger LOG = LoggerFactory.getLogger(PushCallback.class);
+
     @Override
     public void connectionLost(Throwable throwable) {
         /**
          * 连接丢失后，一般在这里面进行重连
          */
-        log.info("连接断开，可以做重连");
+        LOG.info("连接断开，可以做重连");
     }
 
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
         // subscribe后得到的消息会执行到这里面
-        log.info("Server 接收消息主题 : " + topic);
-        log.info("Server 接收消息Qos : " + message.getQos());
-        log.info("Server 接收消息内容 : " + new String(message.getPayload()));
+        LOG.info("Server 接收消息主题 : " + topic);
+        LOG.info("Server 接收消息Qos : " + message.getQos());
+        LOG.info("Server 接收消息内容 : " + new String(message.getPayload()));
     }
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken token) {
-        log.info("deliveryComplete---------" + token.isComplete());
+        LOG.info("deliveryComplete---------" + token.isComplete());
     }
 }
 
