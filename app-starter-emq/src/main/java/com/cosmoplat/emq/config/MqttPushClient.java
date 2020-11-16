@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MqttPushClient {
-    private final static Logger log = LoggerFactory.getLogger(MqttPushClient.class);
+    private final static Logger LOG = LoggerFactory.getLogger(MqttPushClient.class);
     @Autowired
     private PushCallback pushCallback;
 
@@ -45,7 +45,7 @@ public class MqttPushClient {
                 e.printStackTrace();
             }
         } catch (Exception e) {
-            log.error("connect error ", e);
+            LOG.error("connect error ", e);
         }
     }
 
@@ -72,7 +72,7 @@ public class MqttPushClient {
         message.setPayload(pushMessage.getBytes());
         MqttTopic mTopic = MqttPushClient.getClient().getTopic(topic);
         if(null == mTopic){
-            log.info("topic not exist");
+            LOG.info("topic not exist");
         }
         MqttDeliveryToken token;
         try {
@@ -81,7 +81,7 @@ public class MqttPushClient {
         } catch (MqttPersistenceException e) {
             e.printStackTrace();
         } catch (MqttException e) {
-            log.error("publish error ", e);
+            LOG.error("publish error ", e);
         }
     }
 
@@ -102,7 +102,7 @@ public class MqttPushClient {
         try {
             MqttPushClient.getClient().subscribe(topic, qos);
         } catch (MqttException e) {
-            log.error("subscribe error ", e);
+            LOG.error("subscribe error ", e);
         }
     }
 }
