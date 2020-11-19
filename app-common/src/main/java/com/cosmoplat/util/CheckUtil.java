@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @Author: LYH
+ * @Description:
+ * @Date: Create in 17:51 2020/11/19
+ */
 public class CheckUtil {
     /**
      * 验证手机号码
@@ -57,11 +62,11 @@ public class CheckUtil {
         }
         boolean IsCorrect = verify(id);
         if (!IsCorrect) {
-        	return false;
+            return false;
         }
         return true;
     }
-    
+
     //身份证最后一位的校验算法
     public static boolean verify(char[] id) {
         int sum = 0;
