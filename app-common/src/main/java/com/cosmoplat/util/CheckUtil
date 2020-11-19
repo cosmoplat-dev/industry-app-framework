@@ -1,4 +1,5 @@
-package com.cosmo.message.utils;
+package com.cosmoplat.util;
+
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
