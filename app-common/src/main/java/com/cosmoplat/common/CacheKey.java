@@ -9,7 +9,7 @@ public enum CacheKey {
     /**
      * 缓存key例子;
      */
-    EXAMPLE_REDIS_KEY(SysConstants.SYS_CODE + "_redis_key_%s",60*10),;
+    EXAMPLE_REDIS_KEY(SysConstants.SYS_CODE + "_redis_key_%s",60 * 10),;
 
     private String key;
     private int term;

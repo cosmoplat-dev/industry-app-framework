@@ -3,6 +3,7 @@ package com.cosmoplat.example.domain;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
 * 实体类：UserInfo
@@ -14,7 +15,7 @@ public class UserInfo implements Serializable {
 	/**
 	 * 创建时间
 	 */
-	private java.util.Date createTime;
+	private Date createTime;
 	/**
 	 * 主键
 	 */
@@ -34,7 +35,7 @@ public class UserInfo implements Serializable {
 	/**
 	 * 修改时间
 	 */
-	private java.util.Date updateTime;
+	private Date updateTime;
 	/**
 	 * 用户邮箱
 	 */

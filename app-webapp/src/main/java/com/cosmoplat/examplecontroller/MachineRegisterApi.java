@@ -28,6 +28,7 @@ public class MachineRegisterApi {
     ExampleService exampleservice;
 
     @PostMapping("register")
+    @ApiOperation(value = "注册")
     public ResponseData<String> register(@RequestBody RegisterInfo registerInfo) {
         ResponseData<String> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS,null);
         if (null != registerInfo) {
@@ -42,6 +43,7 @@ public class MachineRegisterApi {
     /**
      * 设备注销*/
     @PostMapping("logoff")
+    @ApiOperation(value = "设备注销")
     public ResponseData<String> logoff(@RequestBody RegisterInfo registerInfo) {
         registerInfo.setId(2);
         ResponseData<String> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS,null);

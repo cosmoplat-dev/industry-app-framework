@@ -3,9 +3,7 @@ package com.cosmoplat.bussiness.consumer;
 import com.alibaba.fastjson.JSONObject;
 import com.cosmoplat.bussiness.controller.AssetHealthController;
 import com.cosmoplat.bussiness.websocket.WebSocketServer;
-import com.cosmoplat.example.dao.IRegisterInfoDao;
 import com.cosmoplat.influx.util.InfluxDBUtils;
-import com.cosmoplat.redis.util.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.influxdb.dto.QueryResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,9 @@ import org.springframework.stereotype.Component;
 import javax.jms.JMSException;
 import javax.websocket.EncodeException;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -23,12 +23,6 @@ import java.util.concurrent.TimeUnit;
 public class JmsConsumer {
     @Autowired(required = false)
     private InfluxDBUtils influxDBUtils;
-    @Autowired
-    private RedisUtil redisUtil;
-    @Autowired(required = false)
-    private IRegisterInfoDao iRegisterInfoDao;
-    @Autowired
-    private WebSocketServer webSocketServer;
 
     @JmsListener(destination = "topickkk")
     public void receiveTopic(String message) throws JMSException, IOException, EncodeException {
