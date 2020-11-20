@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("AlibabaClassMustHaveAuthor")
 @Component
 @Slf4j
 public class JmsConsumer {
@@ -33,8 +34,8 @@ public class JmsConsumer {
             //json数据解析
             JSONObject jsonObject=JSONObject.parseObject(messageString);
             List<Map<String,Object>> listData= (List<Map<String, Object>>) jsonObject.get("data");
-            Map<String, String> tags = new HashMap<>();
-            Map<String, Object> fields = new HashMap<>();
+            Map<String, String> tags = new HashMap<>(16);
+            Map<String, Object> fields = new HashMap<>(16);
             for(int i=0;i<listData.size();i++){
                 String machineNumber= String.valueOf(listData.get(i).get("machineNumber"));
                 Map<String,Object> map= (Map<String, Object>) listData.get(i).get("message");
