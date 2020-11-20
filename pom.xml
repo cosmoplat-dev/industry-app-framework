@@ -88,6 +88,13 @@
                 <artifactId>influxdb-java</artifactId>
                 <version>2.15</version>
             </dependency>
+            <!-- pagehelper分页 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.2.10</version>
+            </dependency>
+
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
