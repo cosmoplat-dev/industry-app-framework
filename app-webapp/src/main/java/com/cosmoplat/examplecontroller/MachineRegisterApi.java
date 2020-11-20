@@ -15,11 +15,12 @@ import java.util.List;
 
 /**
  * 设备注册restful
+ *
  * @author 27279
  */
 @RestController
 @RequestMapping("index")
-@Api(value = "MachineRegisterApi",description = "设备注册Controller")
+@Api(value = "MachineRegisterApi", description = "设备注册Controller")
 public class MachineRegisterApi {
 
     @Autowired
@@ -30,7 +31,7 @@ public class MachineRegisterApi {
     @PostMapping("register")
     @ApiOperation(value = "注册")
     public ResponseData<String> register(@RequestBody RegisterInfo registerInfo) {
-        ResponseData<String> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS,null);
+        ResponseData<String> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS, null);
         if (null != registerInfo) {
             exampleIRegisterInfoMapper.save(registerInfo);
         } else {
@@ -41,12 +42,13 @@ public class MachineRegisterApi {
     }
 
     /**
-     * 设备注销*/
+     * 设备注销
+     */
     @PostMapping("logoff")
     @ApiOperation(value = "设备注销")
     public ResponseData<String> logoff(@RequestBody RegisterInfo registerInfo) {
         registerInfo.setId(2);
-        ResponseData<String> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS,null);
+        ResponseData<String> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS, null);
         if (null != registerInfo) {
             registerInfo.setStatus(0);
             RegisterInfo result = exampleIRegisterInfoMapper.getById(registerInfo.getId());
@@ -60,14 +62,13 @@ public class MachineRegisterApi {
     }
 
     @GetMapping("/getRegister")
-    @ApiOperation(httpMethod = "GET",value = "查询注册信息")
-    public ResponseData<List> getRegister(){
-        ResponseData<List> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS,null);
+    @ApiOperation(httpMethod = "GET", value = "查询注册信息")
+    public ResponseData<List> getRegister() {
+        ResponseData<List> responseData = new ResponseData(RepStatus.SUCCESS, ResponseMsg.SUCCESS, null);
         List<RegisterInfo> searchList = exampleservice.searchList();
         responseData.setData(searchList);
-        return  responseData;
+        return responseData;
     }
-
 
 
 }

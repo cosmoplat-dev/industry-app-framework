@@ -19,16 +19,17 @@ public class UserInfoController {
     UserInfoService userInfoService;
     @Autowired
     RedisUtil redisUtil;
+
     @GetMapping("/getUser")
-    public ResponseVo getUserInfoByToken(@RequestParam String token){
+    public ResponseVo getUserInfoByToken(@RequestParam String token) {
         String userId = String.valueOf(redisUtil.get(token));
         UserInfo userInfo = new UserInfo();
         userInfo.setUserId(userId);
-        try{
-             userInfo = userInfoService.getUserInfo(userInfo);
-        }catch (Exception e){
+        try {
+            userInfo = userInfoService.getUserInfo(userInfo);
+        } catch (Exception e) {
             log.error(e.getMessage());
-            throw new RuntimeException("服务器错误："+e.getMessage());
+            throw new RuntimeException("服务器错误：" + e.getMessage());
         }
         return ResponseVo.ok(userInfo);
     }

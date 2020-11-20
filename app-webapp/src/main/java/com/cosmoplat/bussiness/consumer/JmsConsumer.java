@@ -29,27 +29,27 @@ public class JmsConsumer {
     public void receiveTopic(String message) throws IOException, EncodeException {
         if (null != message) {
             String messageString = message;
-            log.info("------------获取到边缘层信息-----------："+messageString);
+            log.info("------------获取到边缘层信息-----------：" + messageString);
             //json数据解析
-            JSONObject jsonObject=JSONObject.parseObject(messageString);
-            List<Map<String,Object>> listData= (List<Map<String, Object>>) jsonObject.get("data");
+            JSONObject jsonObject = JSONObject.parseObject(messageString);
+            List<Map<String, Object>> listData = (List<Map<String, Object>>) jsonObject.get("data");
             Map<String, String> tags = new HashMap<>(16);
             Map<String, Object> fields = new HashMap<>(16);
-            for(int i=0;i<listData.size();i++){
-                String machineNumber= String.valueOf(listData.get(i).get("machineNumber"));
-                Map<String,Object> map= (Map<String, Object>) listData.get(i).get("message");
-                String n=JSONObject.toJSONString(map);
+            for (int i = 0; i < listData.size(); i++) {
+                String machineNumber = String.valueOf(listData.get(i).get("machineNumber"));
+                Map<String, Object> map = (Map<String, Object>) listData.get(i).get("message");
+                String n = JSONObject.toJSONString(map);
                 //封装时序数据库参数
                 tags.put("machineNumber", machineNumber);
                 fields.put("message", n);
-                influxDBUtils.insert("machine_info", tags, fields,System.currentTimeMillis(), TimeUnit.MILLISECONDS);
-                log.info("-------------插入时序数据库-----------tag:"+machineNumber);
+                influxDBUtils.insert("machine_info", tags, fields, System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+                log.info("-------------插入时序数据库-----------tag:" + machineNumber);
             }
-            if(WebSocketServer.getOnlineCount()!=0) {
-                String machineNumeber= AssetHealthController.getMachineNumber();
-                String queryCommand="SELECT * FROM \"machine_info\"  where machineNumber='"+machineNumeber+"' order by time desc limit 10";
-                QueryResult result=influxDBUtils.query(queryCommand);
-                String resultString=JSONObject.toJSONString(result);
+            if (WebSocketServer.getOnlineCount() != 0) {
+                String machineNumeber = AssetHealthController.getMachineNumber();
+                String queryCommand = "SELECT * FROM \"machine_info\"  where machineNumber='" + machineNumeber + "' order by time desc limit 10";
+                QueryResult result = influxDBUtils.query(queryCommand);
+                String resultString = JSONObject.toJSONString(result);
                 WebSocketServer.sendInfo(resultString);
             }
         } else {
