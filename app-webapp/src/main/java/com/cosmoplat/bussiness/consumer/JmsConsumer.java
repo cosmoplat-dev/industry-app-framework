@@ -26,10 +26,9 @@ public class JmsConsumer {
     private InfluxDBUtils influxDBUtils;
 
     @JmsListener(destination = "topickkk")
-    public void receiveTopic(String message) throws JMSException, IOException, EncodeException {
+    public void receiveTopic(String message) throws IOException, EncodeException {
         if (null != message) {
-            //String messageString=ASCIIUtil.asciiToString(message);
-            String messageString=message;
+            String messageString = message;
             log.info("------------获取到边缘层信息-----------："+messageString);
             //json数据解析
             JSONObject jsonObject=JSONObject.parseObject(messageString);
@@ -45,10 +44,6 @@ public class JmsConsumer {
                 fields.put("message", n);
                 influxDBUtils.insert("machine_info", tags, fields,System.currentTimeMillis(), TimeUnit.MILLISECONDS);
                 log.info("-------------插入时序数据库-----------tag:"+machineNumber);
-                //封装redis参数
-                /*redisUtil.set(machineNumber+"-"+String.valueOf(System.currentTimeMillis()),map);
-                redisUtil.expire(machineNumber+"-"+String.valueOf(System.currentTimeMillis()),30000);
-                log.info("-------------插入redis-----------key:"+machineNumber+"-"+String.valueOf(System.currentTimeMillis()));*/
             }
             if(WebSocketServer.getOnlineCount()!=0) {
                 String machineNumeber= AssetHealthController.getMachineNumber();
