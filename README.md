@@ -1,3 +1,10 @@
+* [industry\-app\-framework](#industry-app-framework)
+* [Platform Introduction:](#platform-introduction)
+* [The functions currently implemented are as follows:](#the-functions-currently-implemented-are-as-follows)
+* [Introduction to use:](#introduction-to-use)
+* [System architecture diagram](#system-architecture-diagram)
+* [Demo figure](#demo-figure)
+
 # industry-app-framework
 
 ## Platform Introduction:
