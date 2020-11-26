@@ -1,7 +1,7 @@
 spring:
   activemq:
     # mq地址
-    broker-url:tcp://localhost:8888
+    broker-url: tcp://localhost:8888
     #true 表示使用内置的MQ，false则连接服务器
     in-memory: false
     pool:
