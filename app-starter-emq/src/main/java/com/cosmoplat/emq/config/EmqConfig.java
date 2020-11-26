@@ -10,7 +10,6 @@ import org.springframework.context.annotation.PropertySource;
 /**
  * @author 27279
  */
-@Lazy
 @PropertySource(value = {"application-emq.yml",
 }, encoding = "utf-8",factory = YamlConfigFactory.class)
 @Configuration
@@ -35,6 +34,7 @@ public class EmqConfig {
     private MqttPushClient mqttPushClient;
 
     @Bean
+    @Lazy
     public MqttPushClient getMqttPushClient(){
         mqttPushClient.connect(host, clientId, username, password, timeout,keepalive);
         return mqttPushClient;
