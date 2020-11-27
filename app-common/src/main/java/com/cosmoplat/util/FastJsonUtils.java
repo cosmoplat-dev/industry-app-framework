@@ -10,7 +10,6 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
  
 /**
  * fastjson工具类
- * @version:1.0.0
  */
 public class FastJsonUtils {
  
