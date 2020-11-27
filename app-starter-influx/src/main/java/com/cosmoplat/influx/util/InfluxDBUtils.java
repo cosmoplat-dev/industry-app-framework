@@ -28,7 +28,7 @@ public class InfluxDBUtils {
     Logger logger = LoggerFactory.getLogger(InfluxDBUtils.class);
 
     // 数据保存策略
-//    public static String policyNamePix = "autogen";
+    public static String policyNamePix = "autogen";
 
     public InfluxDBUtils(String userName, String password, String url, String database,
                          String retentionPolicy) {
@@ -36,7 +36,7 @@ public class InfluxDBUtils {
         this.password = password;
         this.url = url;
         this.database = database;
-        this.retentionPolicy = retentionPolicy == null || "".equals(retentionPolicy) ? "autogen" : retentionPolicy;
+        this.retentionPolicy = retentionPolicy == null || "".equals(retentionPolicy) ? policyNamePix : retentionPolicy;
         this.influxDB = influxDbBuild();
     }
 
