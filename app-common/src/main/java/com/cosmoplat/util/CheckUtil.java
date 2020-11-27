@@ -10,6 +10,30 @@ import java.util.regex.Pattern;
  * @Date: Create in 17:51 2020/11/19
  */
 public class CheckUtil {
+    /**
+     * Integer正则表达式 ^-?(([1-9]\d*$)|0)
+     */
+    public static final String  INTEGER = "^-?(([1-9]\\d*$)|0)";
+    /**
+     * 正整数正则表达式 >=0 ^[1-9]\d*|0$
+     */
+    public static final String  INTEGER_NEGATIVE = "^[1-9]\\d*|0$";
+    /**
+     * 负整数正则表达式 <=0 ^-[1-9]\d*|0$
+     */
+    public static final String  INTEGER_POSITIVE = "^-[1-9]\\d*|0$";
+    /**
+     * Double正则表达式 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$
+     */
+    public static final String  DOUBLE ="^-?([1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*|0?\\.0+|0)$";
+    /**
+     * 正Double正则表达式 >=0  ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$　
+     */
+    public static final String  DOUBLE_NEGATIVE ="^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*|0?\\.0+|0$";
+    /**
+     * 负Double正则表达式 <= 0  ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$
+     */
+    public static final String  DOUBLE_POSITIVE ="^(-([1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*))|0?\\.0+|0$";
 
     private static Pattern regex = Pattern.compile("^[1][3,4,5,6,7,8,9][0-9]{9}$");
     /**
