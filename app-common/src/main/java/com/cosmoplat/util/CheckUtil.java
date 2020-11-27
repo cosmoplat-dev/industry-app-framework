@@ -35,6 +35,33 @@ public class CheckUtil {
      */
     public static final String  DOUBLE_POSITIVE ="^(-([1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*))|0?\\.0+|0$";
 
+    /**
+     * 年龄正则表达式 ^(?:[1-9][0-9]?|1[01][0-9]|120)$ 匹配0-120岁
+     */
+    public static final String  AGE="^(?:[1-9][0-9]?|1[01][0-9]|120)$";
+    /**
+     * 邮编正则表达式  [0-9]\d{5}(?!\d) 国内6位邮编
+     */
+    public static final String  CODE="[0-9]\\d{5}(?!\\d)";
+    /**
+     * 匹配由数字、26个英文字母或者下划线组成的字符串 ^\w+$
+     */
+    public static final String STR_ENG_NUM_="^\\w+$";
+    /**
+     * 匹配由数字和26个英文字母组成的字符串 ^[A-Za-z0-9]+$
+     */
+    public static final String STR_ENG_NUM="^[A-Za-z0-9]+";
+    /**
+     * 匹配由26个英文字母组成的字符串  ^[A-Za-z]+$
+     */
+    public static final String STR_ENG="^[A-Za-z]+$";
+    /**
+     * 过滤特殊字符串正则
+     * regEx="[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+     */
+    public static final String STR_SPECIAL="[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+
+
     private static Pattern regex = Pattern.compile("^[1][3,4,5,6,7,8,9][0-9]{9}$");
     /**
      * 验证手机号码
