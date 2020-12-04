@@ -134,8 +134,8 @@ public class ResponseData<T>  {
         result = result * 59 + (message == null ? 43 : message.hashCode());
         Object data = this.getData();
         result = result * 59 + (data == null ? 43 : data.hashCode());
-        Object $ts = this.getTs();
-        result = result * 59 + ($ts == null ? 43 : $ts.hashCode());
+        Object ts = this.getTs();
+        result = result * 59 + (ts == null ? 43 : ts.hashCode());
         return result;
     }
 
