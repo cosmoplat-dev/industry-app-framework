@@ -11,9 +11,10 @@ public class SpringUtils implements ApplicationContextAware {
     //spring上下文context
     private static ApplicationContext applicationContext;
 
+    @Override
     @Autowired
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
+    public void setApplicationContext(ApplicationContext context) throws BeansException {
+        applicationContext = context;
     }
 
     /**
