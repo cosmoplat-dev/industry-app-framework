@@ -96,6 +96,15 @@ public class CheckUtil {
     "(\\w*&)*(\\w*-)*(\\w*=)*)*(\\w*)*)$";
 
   /**
+   * 判断字段是否为空 符合返回ture
+   * @param str
+   * @return boolean
+   */
+  public static synchronized boolean StrisNull(String str) {
+    return null == str || str.trim().length() <= 0 ? true : false ;
+  }
+
+  /**
      * 验证手机号码
      *
      * @param mobiles
