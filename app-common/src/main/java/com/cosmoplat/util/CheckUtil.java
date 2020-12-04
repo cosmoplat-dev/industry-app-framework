@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
  * @Date: Create in 17:51 2020/11/19
  */
 public class CheckUtil {
+    public static final String COMMON_REGES="^[1][3,4,5,6,7,8,9][0-9]{9}$";
     /**
      * 验证手机号码
      *
@@ -19,7 +20,7 @@ public class CheckUtil {
     public static boolean isMobileNO(String mobiles) {
         boolean flag = false;
         try {
-            Pattern regex = Pattern.compile("^[1][3,4,5,6,7,8,9][0-9]{9}$");
+            Pattern regex = Pattern.compile(COMMON_REGES);
             Matcher m = regex.matcher(mobiles);
             flag = m.matches();
         } catch (Exception e) {
