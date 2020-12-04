@@ -24,6 +24,7 @@ public class UserInfoController {
     RedisUtil redisUtil;
 
     @GetMapping("/getUser")
+    @ApiOperation(value = "token换取用户信息")
     public ResponseVo getUserInfoByToken(@RequestParam String token) {
         String userId = String.valueOf(redisUtil.get(token));
         UserInfo userInfo = new UserInfo();
