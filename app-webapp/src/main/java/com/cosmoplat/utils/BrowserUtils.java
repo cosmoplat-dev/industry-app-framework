@@ -3,9 +3,6 @@ package com.cosmoplat.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author zilong.wang on 2019-11-19.
- */
 public class BrowserUtils {
     private enum BrowserType {
         IE11, IE10, IE9, IE8, IE7, IE6, Firefox, Safari, Chrome, Opera, Camino, Gecko

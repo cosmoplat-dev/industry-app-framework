@@ -3,9 +3,6 @@ package com.cosmoplat.utils;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * @author Willard Hu on 2019/9/6.
- */
 public class ThreadContext {
     public static final String BACKAUTH_CLAIMS_KEY = "BACKAUTH_CLAIMS";
 //    public static final String  BACKAUTH_TOKEN_KEY = "BACKAUTH_TOKEN";
