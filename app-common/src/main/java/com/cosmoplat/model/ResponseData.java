@@ -128,12 +128,12 @@ public class ResponseData<T>  {
     @Override
     public int hashCode() {
         int result = 1;
-        Object $code = this.getCode();
-        result = result * 59 + ($code == null ? 43 : $code.hashCode());
-        Object $message = this.getMessage();
-        result = result * 59 + ($message == null ? 43 : $message.hashCode());
-        Object $data = this.getData();
-        result = result * 59 + ($data == null ? 43 : $data.hashCode());
+        Object code = this.getCode();
+        result = result * 59 + (code == null ? 43 : code.hashCode());
+        Object message = this.getMessage();
+        result = result * 59 + (message == null ? 43 : message.hashCode());
+        Object data = this.getData();
+        result = result * 59 + (data == null ? 43 : data.hashCode());
         Object $ts = this.getTs();
         result = result * 59 + ($ts == null ? 43 : $ts.hashCode());
         return result;
