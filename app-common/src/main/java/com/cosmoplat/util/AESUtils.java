@@ -1,6 +1,7 @@
 package com.cosmoplat.util;
 
 import org.apache.commons.codec.binary.Base64;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -23,6 +24,7 @@ public class AESUtils {
 
   /**
    * 加密
+   *
    * @param content
    * @return
    */
@@ -32,6 +34,7 @@ public class AESUtils {
 
   /**
    * 解密
+   *
    * @param content
    * @return
    */
@@ -41,6 +44,7 @@ public class AESUtils {
 
   /**
    * 加密
+   *
    * @param content 明文
    * @param key     密钥
    * @return
@@ -51,9 +55,11 @@ public class AESUtils {
       IvParameterSpec iv = new IvParameterSpec(key.getBytes(), 0, offset);
       Cipher cipher = Cipher.getInstance(transformation);
       byte[] byteContent = content.getBytes(charset);
-      cipher.init(Cipher.ENCRYPT_MODE, skey, iv);// 初始化
+      // 初始化
+      cipher.init(Cipher.ENCRYPT_MODE, skey, iv);
       byte[] result = cipher.doFinal(byteContent);
-      return Base64.encodeBase64String(result); // 加密
+      // 加密
+      return Base64.encodeBase64String(result);
     } catch (Exception e) {
       // 异常返回原文
       return content;
@@ -62,6 +68,7 @@ public class AESUtils {
 
   /**
    * 解密
+   *
    * @param content 密文
    * @param key     密钥
    * @return 明文
