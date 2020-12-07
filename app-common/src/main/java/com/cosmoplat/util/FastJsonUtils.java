@@ -78,7 +78,7 @@ public class FastJsonUtils {
 
     /**
      * 将string转化为序列化的json字符串
-     * @param keyvalue
+     * @param text
      * @return
      */
     public static Object textToJson(String text) {
