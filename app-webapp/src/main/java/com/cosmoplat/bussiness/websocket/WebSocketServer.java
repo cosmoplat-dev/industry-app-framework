@@ -32,8 +32,10 @@ public class WebSocketServer {
     @OnOpen
     public void onOpen(Session session,@PathParam("sid") String sid) throws EncodeException {
         this.session = session;
-        webSocketSet.add(this);     //加入set中
-        addOnlineCount();           //在线数加1
+        //加入set中
+        webSocketSet.add(this);
+        //在线数加1
+        addOnlineCount();
         log.info("有新窗口开始监听:"+sid+",当前在线人数为" + getOnlineCount());
         WebSocketServer.sid = sid;
         try {
