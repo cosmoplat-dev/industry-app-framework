@@ -15,6 +15,7 @@ public class AESUtils {
    */
   public static String default_key = "fS6Von6MQAVynXy1oZfxC7VNSMMXkNKd";
   private static Charset charset = StandardCharsets.UTF_8;
+
   /**
    * 设置偏移量
    */
