@@ -1,0 +1,5 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch    #访问http://localhost:9200返回的cluster_name值
+      cluster-nodes: 127.0.0.1:9300  #映射es的9300端口，是和es的通信端口

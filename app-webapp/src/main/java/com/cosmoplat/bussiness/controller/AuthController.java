@@ -49,8 +49,4 @@ public class AuthController {
         return  ResponseVo.ok();
     }
 
-    @GetMapping("/test")
-    public Object test(){
-        return "hello world";
-    }
 }

@@ -22,6 +22,19 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
+        <dependency>
+          <groupId>com.baomidou</groupId>
+          <artifactId>mybatis-plus-boot-starter</artifactId>
+          <version>3.4.0</version>
+        </dependency>
+
+        <!--mybatis-plus 码生成器 添加 模板引擎依赖 这个需要增加模板引擎依赖，如freemarker -->
+        <dependency>
+          <groupId>com.baomidou</groupId>
+          <artifactId>mybatis-plus-generator</artifactId>
+          <version>3.4.0</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -105,12 +105,12 @@
                 <artifactId>java-jwt</artifactId>
                 <version>3.8.1</version>
             </dependency>
+          <!-- es -->
             <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>2.10.8</version>
+              <groupId>org.springframework.data</groupId>
+              <artifactId>spring-data-elasticsearch</artifactId>
+              <version>3.1.9.RELEASE</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -160,5 +160,6 @@
         <module>app-starter-swagger</module>
         <module>app-starter-logback</module>
         <module>app-starter-influx</module>
+        <module>app-starter-elasticsearch</module>
     </modules>
 </project>
