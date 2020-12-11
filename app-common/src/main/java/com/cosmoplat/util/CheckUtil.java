@@ -114,6 +114,16 @@ public class CheckUtil {
   }
 
   /**
+   * 字符串null赋值默认值
+   * @param str    目标字符串
+   * @param def 默认值
+   * @return String
+   */
+  public static  String nullToStr(String str,String def) {
+    return StrisNull(str)?def:str;
+  }
+
+  /**
      * 判断字段是否为空 符合返回ture
      * @param str
      * @return boolean
