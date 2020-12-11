@@ -105,6 +105,15 @@ public class CheckUtil {
   }
 
   /**
+   * 字符串null转空
+   * @param str
+   * @return boolean
+   */
+  public static  String nulltoStr(String str) {
+    return StrisNull(str)?"":str;
+  }
+
+  /**
      * 判断字段是否为空 符合返回ture
      * @param str
      * @return boolean
