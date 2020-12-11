@@ -33,5 +33,6 @@ public class People implements Serializable {
   	//用户手机号
 	private String userPhone;
 
+	//用户随机标识，有效期为5分钟
 	private String token;
 }

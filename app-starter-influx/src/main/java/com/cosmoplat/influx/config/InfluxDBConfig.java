@@ -29,7 +29,7 @@ public class InfluxDBConfig {
 
     @Bean
     public InfluxDBUtils influxDbUtils() {
-        return new InfluxDBUtils(userName, password, influxDBUrl, database, "autogen");
+      return new InfluxDBUtils(userName, password, influxDBUrl, database, "autogen");
     }
 
 }

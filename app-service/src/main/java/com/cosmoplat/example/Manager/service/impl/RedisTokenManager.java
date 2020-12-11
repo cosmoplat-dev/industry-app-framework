@@ -16,6 +16,9 @@ public class RedisTokenManager implements TokenManager {
     @Autowired
     RedisUtil redisUtil;
 
+    /**
+     * @Description: 初始化token
+     */
     @Override
     public void initToken(UserInfo userInfo) {
         String userId = userInfo.getUserId();

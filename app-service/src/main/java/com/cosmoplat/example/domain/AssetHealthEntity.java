@@ -3,6 +3,7 @@ package com.cosmoplat.example.domain;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 设备运行状态
@@ -23,5 +24,11 @@ public class AssetHealthEntity implements Serializable {
      * 信息
      */
     private String message;
+
+  public AssetHealthEntity(String time, String machineNumber, String message) {
+    this.time = time;
+    this.machineNumber = machineNumber;
+    this.message = message;
+  }
 
 }
