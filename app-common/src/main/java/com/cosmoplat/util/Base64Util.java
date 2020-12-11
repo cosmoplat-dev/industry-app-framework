@@ -15,12 +15,14 @@ public class Base64Util {
      * 将 s 进行 BASE64 编码
      *
      * @return String
-     * @author lifq
+     * @author hxx
      * @date 2015-3-4 上午09:24:02
      */
     public static String encode(String s) {
-        if (s == null)
+        if (s == null){
             return null;
+        }
+
         String res = "";
         try {
             res = Base64.encodeBase64String(s.getBytes("GBK"));
@@ -33,12 +35,13 @@ public class Base64Util {
      * 将 BASE64 编码的字符串 s 进行解码
      *
      * @return String
-     * @author lifq
+     * @author hxx
      * @date 2015-3-4 上午09:24:26
      */
     public static String decode(String s) {
-        if (s == null)
+        if (s == null){
             return null;
+        }
         try {
             byte[] b = Base64.decodeBase64(s);
             return new String(b, "GBK");
