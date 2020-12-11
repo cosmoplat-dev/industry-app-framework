@@ -4,7 +4,7 @@
 * [Introduction to use:](#introduction-to-use)
 * [System architecture diagram](#system-architecture-diagram)
 * [Demo figure](#demo-figure)
-1
+
 # industry-app-framework
 
 ## Platform Introduction:
