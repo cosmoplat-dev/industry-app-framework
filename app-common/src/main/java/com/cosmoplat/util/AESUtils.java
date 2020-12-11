@@ -16,7 +16,7 @@ public class AESUtils {
   public static String default_key = "fS6Von6MQAVynXy1oZfxC7VNSMMXkNKd";
   private static Charset charset = StandardCharsets.UTF_8;
   /**
-   * 偏移量设置
+   * 设置偏移量
    */
   private static int offset = 16;
   private static String transformation = "AES/CBC/PKCS5Padding";
@@ -24,7 +24,6 @@ public class AESUtils {
 
   /**
    * 加密
-   *
    * @param content
    * @return
    */
