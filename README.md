@@ -5,7 +5,6 @@
 * [System architecture diagram](#system-architecture-diagram)
 * [Demo figure](#demo-figure)
 
-
 # industry-app-framework
 
 ## Platform Introduction:
