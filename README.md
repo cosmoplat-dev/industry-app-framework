@@ -7,7 +7,6 @@
 
 
 
-
 # industry-app-framework
 
 ## Platform Introduction:
