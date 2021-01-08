@@ -6,7 +6,6 @@
 * [Demo figure](#demo-figure)
 
 
-
 # industry-app-framework
 
 ## Platform Introduction:
